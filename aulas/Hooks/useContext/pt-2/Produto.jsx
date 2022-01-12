@@ -6,9 +6,13 @@ const Produto = () => {
 
     const global = react.useContext(GlobalContext)
 
+    console.log(global)
+
+    if(global.dados === null) return null
+
     return (
         <div>
-            <p>Produto: {global.nome}</p>
+           <p>Produtos: {global.dados.map((produto) => <li key={produto.id}>{produto.nome}</li>)}</p>
         </div>
     )
 
